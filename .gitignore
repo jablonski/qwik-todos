@@ -44,3 +44,6 @@ functions/**/*.js
 # Azure
 /azure-functions/**
 !/azure-functions/host.json
+
+# Vercel
+.vercel
