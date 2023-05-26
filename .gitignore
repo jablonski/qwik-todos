@@ -3,6 +3,7 @@
 /lib
 /lib-types
 /server
+/tmp
 
 # Development
 node_modules
@@ -37,13 +38,6 @@ lerna-debug.log*
 .yarn/*
 !.yarn/releases
 
-# Cloudflare
-functions/**/*.js
-.wrangler/
-
-# Azure
-/azure-functions/**
-!/azure-functions/host.json
 
 # Vercel
 .vercel

@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import type { Todo } from "./todo";
 
 let todos: Todo[] = [];
@@ -18,7 +17,7 @@ export const todoService = {
   },
   addTodo(title: string) {
     const newTodo = {
-      id: uuidv4(),
+      id: uuid(),
       title,
       createdTimestamp: new Date(),
     };
@@ -48,3 +47,16 @@ export const todoService = {
     todos = todos.filter((todo) => !todo.completed);
   },
 };
+
+function uuid() {
+  let d = new Date().getTime();
+  const result = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+    /[xy]/g,
+    function (c) {
+      const r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+      return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
+    }
+  );
+  return result;
+}
